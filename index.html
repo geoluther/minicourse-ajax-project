@@ -32,18 +32,5 @@
     <script src="js/libs/jquery.min.js"></script>
     <script src="js/script.js"></script>
 
-    <script>
-    var city = $("#city").val();
-    console.log(city);
-    var street = $("#street").val();
-    console.log(street);
-    var address = street + ', ' + street;
-    var url = 'https://maps.googleapis.com/maps/api/streetview?' + address;
-
-// https://maps.googleapis.com/maps/api/streetview?size=400x400&location=40.720032,-73.988354&fov=90&heading=235&pitch=10
-    $('body').append('<img class="bgimg" src="' + url + '">');
-
-
-    </script>
 </body>
 </html>

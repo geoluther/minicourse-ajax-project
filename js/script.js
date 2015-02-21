@@ -21,11 +21,18 @@ function loadData() {
 
     var url = 'https://maps.googleapis.com/maps/api/streetview?size=600x400&location=' + address;
 
-// https://maps.googleapis.com/maps/api/streetview?size=400x400&location=40.720032,-73.988354&fov=90&heading=235&pitch=10
     $( "body" ).append('<img class="bgimg" src="' + url + '">');
-    // $body.append('<img class="bgimg" src="https://placeimg.com/640/480/any">');
-
     // YOUR CODE GOES HERE!
+
+    var keyNYT = '&api-key=29ce58daadeb5a0f1e7b6aa079877df2:14:71400766';
+    var baseURL = 'http://api.nytimes.com/svc/search/v2/articlesearch'
+    var query = '?q=new+york+times&page=2&sort=oldest';
+
+    var URL = baseURL + query + keyNYT;
+
+    $.getJSON(URL, function(data) {
+        console.log(data);
+    });
 
     return false;
 };
@@ -33,3 +40,6 @@ function loadData() {
 $('#form-container').submit(loadData);
 
 // loadData();
+
+// nyt key:
+// 29ce58daadeb5a0f1e7b6aa079877df2:14:71400766
