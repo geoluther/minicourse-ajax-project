@@ -33,6 +33,13 @@ function loadData() {
 
     $.getJSON(URL, function(data) {
         console.log(data);
+        for (var i = 0; i < data.response.docs.length; i = i + 1) {
+            console.log(data.response.docs[i].web_url);
+            console.log(data.response.docs[i].snippet);
+            //$nytElem.append('<li><a href="' + data.response.docs[i].web_url + '">');
+            $nytElem.append('<li><strong>' + data.response.docs[i].headline.main + '</strong>');
+            $nytElem.append('<div class=article>' + data.response.docs[i].snippet + '</div></li>');
+        }
     });
 
     return false;
