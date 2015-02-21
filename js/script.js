@@ -25,10 +25,11 @@ function loadData() {
     // YOUR CODE GOES HERE!
 
     var keyNYT = '&api-key=29ce58daadeb5a0f1e7b6aa079877df2:14:71400766';
-    var baseURL = 'http://api.nytimes.com/svc/search/v2/articlesearch'
+    var baseURL = 'http://api.nytimes.com/svc/search/v2/articlesearch.json'
     var query = '?q=new+york+times&page=2&sort=oldest';
+    var cityQuery = '?q=' + city;
 
-    var URL = baseURL + query + keyNYT;
+    var URL = baseURL + cityQuery + keyNYT;
 
     $.getJSON(URL, function(data) {
         console.log(data);
